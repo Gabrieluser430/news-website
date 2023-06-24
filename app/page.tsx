@@ -3,6 +3,8 @@ import logo from "../public/logo.svg"
 import menu from "../public/icon-menu.svg"
 import mobileMainImg from "../public/mainImg.jpg"
 import mobileRetro from "../public/image-retro-pcs.jpg"
+import mobileGaming from "../public/image-gaming-growth.jpg"
+import mobileLaptop from "../public/image-top-laptops.jpg"
 
 export default function Home() {
   return (
@@ -34,44 +36,57 @@ export default function Home() {
           </p>
           <button className="bg-red-500 text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
         </div>
-        <section className="mt-20 bg-blue-950 p-6">
-          <h2 className="text-4xl font-semibold text-yellow-500">New</h2>
-          <div>
-            <div className="text-gray-200 mt-8 border-b-2 border-gray-400 pb-10">
-              <h3 className="font-semibold text-2xl">Hydrogen VS Electric Cars</h3>
-              <p className="text-gray-300 mt-2 leading-8">Will hydrogen-fueled cars ever catch up to EVs?</p>
-            </div>
-            <div className="text-gray-200 mt-8 border-b-2 border-gray-400 pb-10">
-              <h3 className="font-semibold text-2xl">The Downsides of AI Artistry</h3>
-              <p className="text-gray-300 mt-2 leading-8">What are the possible adverse effects of 
-              on-demand AI image generation?</p>
-            </div>
-            <div className="text-gray-200 mt-8 pb-2">
-              <h3 className="font-semibold text-2xl">Is VC Funding Drying up?</h3>
-              <p className="text-gray-300 mt-2 leading-8">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
-            </div>
-          </div>
-        </section>
         <section className="mt-20">
-          <div>
-            <div className="flex justify-center items-center">
-              <div className="h-full"  style={{height: "150px", width: "200px"}}>
-                <Image
-                  src={mobileRetro}
+  <div className="grid gap-10 justify-center items-center">
+    <div className="grid grid-cols-2 gap-4 p-4">
+      <div className="aspect-w-7 aspect-h-4">
+        <Image
+          src={mobileRetro}
+          alt="A old computer"
+          className="object-contain"
+        />
+      </div>
+      <div className="flex flex-col justify-center">
+        <h2 className="font-semibold text-gray-400 text-3xl">01</h2>
+        <h3 className="font-extrabold text-xl mt-4">Reviving Retro PCs</h3>
+        <p className="leading-6 text-md text-gray-500 mt-4">What happens when old PCs are given modern upgrades?</p>
+      </div>
+    </div>
 
-                  alt="A old computer"
-                  className="w-full h-full"
-                />
-              </div>
-              <div>
-                <h2 className="font-semibold text-gray-400 text-3xl">01</h2>
-                <h3 className=" font-extrabold text-xl mt-4">Reviving Retro PCs</h3>
-                <p className="leading-6 text-md text-gray-500 mt-4">What happens when old PCs are given modern upgrades?</p>
+    <div className="grid grid-cols-2 gap-4 p-4">
+      <div className="aspect-w-7 aspect-h-4">
+        <Image
+          src={mobileLaptop}
+          alt="A old computer"
+          className="object-contain"
+        />
+      </div>
+      <div className="flex flex-col justify-center">
+        <h2 className="font-semibold text-gray-400 text-3xl">02</h2>
+        <h3 className="font-extrabold text-xl mt-4">Top 10 Laptops of 2022</h3>
+        <p className="leading-6 text-md text-gray-500 mt-4">Our best picks for various needs and budgets.</p>
+      </div>
+    </div>
 
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-2 gap-4 p-4">
+      <div className="aspect-w-7 aspect-h-4">
+        <Image
+          src={mobileGaming}
+          alt="A old computer"
+          className="object-contain"
+        />
+      </div>
+      <div className="flex flex-col justify-center">
+        <h2 className="font-semibold text-gray-400 text-3xl">03</h2>
+        <h3 className="font-extrabold text-xl mt-4">The Growth of Gaming</h3>
+        <p className="leading-6 text-md text-gray-500 mt-4">How the pandemic has sparked fresh opportunities</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       </main>
     </div>
   )
