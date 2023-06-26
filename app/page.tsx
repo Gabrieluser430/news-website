@@ -9,7 +9,7 @@ import mobileLaptop from "../public/image-top-laptops.jpg"
 export default function Home() {
   return (
     <div>
-      <nav className="flex flex-row justify-between items-center h-28 px-12">
+      <nav className="flex flex-row justify-between items-center h-28 px-6">
         <div>
           <Image src={logo} alt="Logo" width={50} height={50}/>
         </div>
@@ -17,13 +17,13 @@ export default function Home() {
           <Image src={menu} alt="Menu" width={50} height={50} />
         </div>
       </nav>
-      <main className=" px-12">
+
+      <main className=" px-6">
         <div className="h-full w-full flex justify-center items-center">
         <Image
             src={mobileMainImg}
             height={500}
             width={500}
-            objectFit="cover"
             alt="carousel"
         />
         </div>
@@ -34,59 +34,78 @@ export default function Home() {
             put the power of the platforms back into the hands of the people.
             But is it really fulfillings its promise?
           </p>
-          <button className="bg-red-500 text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
+          <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
         </div>
+
+        <section className="mt-20 ">
+          <div className=" px-8 pt-8 pb-2 bg-container-color">
+              <h2 className=" text-new-color font-bold text-4xl ">New</h2>
+          </div>
+          <div className=" bg-container-color text-letter-color grid grid-rows-3 gap-y-8 px-8 pt-8">
+            <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+              <h2 className=" text-gray-200 font-bold text-2xl">Hydrogen VS Electric Cars</h2>
+              <p className=" text-gray-400 text-lg mt-2">Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </div>
+            <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+              <h2 className=" text-gray-200 font-bold text-2xl">The Downsides of AI Artistry</h2>
+              <p className=" text-gray-400 text-lg mt-2">What are the possible adverse effects of on-demand AI image generation?</p>
+            </div>
+            <div className=" flex flex-col">
+              <h2 className=" text-gray-200 font-bold text-2xl">Is VC Funding Drying Up?</h2>
+              <p className=" text-gray-400 text-lg mt-2">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="mt-20">
-  <div className="grid gap-10 justify-center items-center">
-    <div className="grid grid-cols-2 gap-4 p-4">
-      <div className="aspect-w-7 aspect-h-4">
-        <Image
-          src={mobileRetro}
-          alt="A old computer"
-          className="object-contain"
-        />
-      </div>
-      <div className="flex flex-col justify-center">
-        <h2 className="font-semibold text-gray-400 text-3xl">01</h2>
-        <h3 className="font-extrabold text-xl mt-4">Reviving Retro PCs</h3>
-        <p className="leading-6 text-md text-gray-500 mt-4">What happens when old PCs are given modern upgrades?</p>
-      </div>
-    </div>
+        <div className="grid grid-cols-1 gap-y-10">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+              <Image
+                src={mobileRetro}
+                alt="A old computer"
+                className="object-contain"
+              />
+            </div>
+            <div className="col-span-2 px-4 flex flex-col justify-between">
+              <h2 className="text-4xl font-extrabold text-gray-500">01</h2>
+              <h3 className="text-xl font-extrabold">Reviving Retro PCs</h3>
+              <p className="text-lg text-gray-500">What happens when old PCs are given modern upgrades?</p>
+            </div>
+          </div>
 
-    <div className="grid grid-cols-2 gap-4 p-4">
-      <div className="aspect-w-7 aspect-h-4">
-        <Image
-          src={mobileLaptop}
-          alt="A old computer"
-          className="object-contain"
-        />
-      </div>
-      <div className="flex flex-col justify-center">
-        <h2 className="font-semibold text-gray-400 text-3xl">02</h2>
-        <h3 className="font-extrabold text-xl mt-4">Top 10 Laptops of 2022</h3>
-        <p className="leading-6 text-md text-gray-500 mt-4">Our best picks for various needs and budgets.</p>
-      </div>
-    </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+              <Image
+                src={mobileLaptop}
+                alt="A old computer"
+                className="object-contain"
+              />
+            </div>
+            <div className="col-span-2 px-4 flex flex-col justify-between">
+              <h2 className="text-4xl font-extrabold text-gray-500">02</h2>
+              <h3 className="text-xl font-extrabold">Top 10 Laptops of 2022</h3>
+              <p className="text-lg text-gray-500">Our best picks for various needs and budgets.</p>
+            </div>
+          </div>
 
-    <div className="grid grid-cols-2 gap-4 p-4">
-      <div className="aspect-w-7 aspect-h-4">
-        <Image
-          src={mobileGaming}
-          alt="A old computer"
-          className="object-contain"
-        />
-      </div>
-      <div className="flex flex-col justify-center">
-        <h2 className="font-semibold text-gray-400 text-3xl">03</h2>
-        <h3 className="font-extrabold text-xl mt-4">The Growth of Gaming</h3>
-        <p className="leading-6 text-md text-gray-500 mt-4">How the pandemic has sparked fresh opportunities</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+              <Image
+                src={mobileGaming}
+                alt="A old computer"
+                className="object-contain"
+              />
+            </div>
+            <div className="col-span-2 px-4 flex flex-col justify-between">
+              <h2 className="text-4xl font-extrabold text-gray-500">04</h2>
+              <h3 className="text-xl font-extrabold">The Growth of Gaming</h3>
+              <p className="text-lg text-gray-500">How the pandemic has sparked fresh opportunities.</p>
+            </div>
+          </div>
+        </div>
 
-
-
+        </section>
       </main>
     </div>
   )
