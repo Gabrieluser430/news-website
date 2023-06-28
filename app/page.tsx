@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import logo from "../public/logo.svg"
 import menu from "../public/icon-menu.svg"
@@ -5,17 +7,39 @@ import mobileMainImg from "../public/mainImg.jpg"
 import mobileRetro from "../public/image-retro-pcs.jpg"
 import mobileGaming from "../public/image-gaming-growth.jpg"
 import mobileLaptop from "../public/image-top-laptops.jpg"
+import {useEffect, useState} from "react"
 
 export default function Home() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   return (
     <div>
-      <nav className="flex flex-row justify-between items-center h-28 px-6">
+      <nav className="flex flex-row justify-between items-center h-28 px-6 lg:px-44 md:px-32">
         <div>
           <Image src={logo} alt="Logo" width={50} height={50}/>
         </div>
-        <div>
+        {windowWidth < 1000 ? (
+          <div>
           <Image src={menu} alt="Menu" width={50} height={50} />
-        </div>
+          </div>
+        ) : (
+          <div className=" w-96 flex flex-row justify-between text-gray-500 font-medium">
+            <a>Home</a>
+            <a>New</a>
+            <a>Popular</a>
+            <a>Trending</a>
+            <a>Categories</a>
+          </div>
+        )
+      }
       </nav>
 
       <main className=" px-6">
