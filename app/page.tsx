@@ -3,15 +3,14 @@
 import Image from 'next/image'
 import logo from "../public/logo.svg"
 import menu from "../public/icon-menu.svg"
-import mobileMainImg from "../public/mainImg.jpg"
+import mobileMainImg from "../public/image-web-3-desktop.jpg"
+import desktopMainImg from "../public/bigMainImg.jpg"
 import mobileRetro from "../public/image-retro-pcs.jpg"
 import mobileGaming from "../public/image-gaming-growth.jpg"
 import mobileLaptop from "../public/image-top-laptops.jpg"
 import {useEffect, useState} from "react"
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
@@ -20,9 +19,11 @@ export default function Home() {
 
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
   return (
     <div>
-      <nav className="flex flex-row justify-between items-center h-28 px-6 lg:px-44 md:px-32">
+      <nav className="flex flex-row justify-between items-center h-28 px-6 lg:px-44 lg:py-20">
         <div>
           <Image src={logo} alt="Logo" width={50} height={50}/>
         </div>
@@ -31,25 +32,46 @@ export default function Home() {
           <Image src={menu} alt="Menu" width={50} height={50} />
           </div>
         ) : (
-          <div className=" w-96 flex flex-row justify-between text-gray-500 font-medium">
-            <a>Home</a>
-            <a>New</a>
-            <a>Popular</a>
-            <a>Trending</a>
-            <a>Categories</a>
+          <div className="bg-red-500 flex flex-row justify-between text-gray-500 font-medium lg:text-2xl">
+            <a className="mr-8">Home</a>
+            <a className="mr-8">New</a>
+            <a className="mr-8">Popular</a>
+            <a className="mr-8">Trending</a>
+            <a className="mr-8">Categories</a>
           </div>
         )
       }
       </nav>
 
-      <main className=" px-6">
-        <div className="h-full w-full flex justify-center items-center">
-        <Image
-            src={mobileMainImg}
-            height={500}
-            width={500}
-            alt="carousel"
-        />
+      <main className=" px-6 lg:px-44">
+        <div className={`${windowWidth > 1000 ? "flex flex-row" : ""}`}>
+          <div className={`aspect-w-1 aspect-h-1 ${windowWidth > 1000 ? "pr-12" : ""}`}>
+            <Image
+              src={mobileMainImg}
+              objectFit="cover"
+              alt="carousel"
+              className="rounded-lg"
+            />
+          </div>
+          <div className="flex flex-col">
+            <div className=" px-10 pt-8 pb-10 bg-container-color">
+                <h2 className=" text-new-color font-bold text-4xl ">New</h2>
+            </div>
+            <div className=" bg-container-color text-letter-color grid grid-rows-3 gap-y-14 px-8 pt-8">
+              <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+                <h2 className=" text-gray-200 font-bold text-3xl">Hydrogen VS Electric Cars</h2>
+                <p className=" text-gray-400 text-xl mt-2">Will hydrogen-fueled cars ever catch up to EVs?</p>
+              </div>
+              <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+                <h2 className=" text-gray-200 font-bold text-3xl">The Downsides of AI Artistry</h2>
+                <p className=" text-gray-400 text-xl mt-2">What are the possible adverse effects of on-demand AI image generation?</p>
+              </div>
+              <div className=" flex flex-col">
+                <h2 className=" text-gray-200 font-bold text-3xl">Is VC Funding Drying Up?</h2>
+                <p className=" text-gray-400 text-xl mt-2">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <h1 className="font-bold text-5xl mt-8">The Bright Future of Web 3.0?</h1>
