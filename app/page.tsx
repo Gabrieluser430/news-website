@@ -24,15 +24,15 @@ export default function Home() {
   return (
     <div>
       <nav className="flex flex-row justify-between items-center h-28 px-6 lg:px-44 lg:py-20">
-        <div>
-          <Image src={logo} alt="Logo" width={50} height={50}/>
+        <div className="pl-2">
+          <Image src={logo} alt="Logo" width={`${windowWidth > 1000 ? 70 : 50}`} height={50}/>
         </div>
-        {windowWidth < 1000 ? (
-          <div>
-          <Image src={menu} alt="Menu" width={50} height={50} />
+        {windowWidth < 1300 ? (
+          <div className="pr-2 md:pr-12">
+          <Image src={menu} alt="Menu" width={`${windowWidth > 1000 ? 70 : 50}`} height={50} />
           </div>
         ) : (
-          <div className="bg-red-500 flex flex-row justify-between text-gray-500 font-medium lg:text-2xl">
+          <div className=" flex flex-row justify-between text-gray-500 font-medium lg:text-2xl lg">
             <a className="mr-8">Home</a>
             <a className="mr-8">New</a>
             <a className="mr-8">Popular</a>
@@ -43,26 +43,40 @@ export default function Home() {
       }
       </nav>
 
-      <main className=" px-6 lg:px-44">
+      <main className=" px-6 lg:px-32">
         <div className={`${windowWidth > 1000 ? "flex flex-row" : ""}`}>
-          <div className={`aspect-w-1 aspect-h-1 ${windowWidth > 1000 ? "pr-12" : ""}`}>
-            <Image
-              src={mobileMainImg}
-              objectFit="cover"
-              alt="carousel"
-              className="rounded-lg"
-            />
+          <div>
+            <div className={`aspect-w-1 aspect-h-1 ${windowWidth > 1000 ? "pr-12" : ""}`}>
+              <Image
+                src={mobileMainImg}
+                objectFit="cover"
+                alt="carousel"
+                className="rounded-lg"
+              />
+            </div>
+            {windowWidth > 1000 ? (<div>
+              <div>
+                <h1 className="font-bold text-5xl mt-8">The Bright Future of Web 3.0?</h1>
+                <p className="text-gray-700 text-lg mt-8 leading-8 pr-12">
+                  We dive into the next evolution of the web that claims to
+                  put the power of the platforms back into the hands of the people.
+                  But is it really fulfillings its promise?
+                </p>
+                <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
+              </div>
+            </div>) : ""}
           </div>
-          <div className="flex flex-col">
-            <div className=" px-10 pt-8 pb-10 bg-container-color">
-                <h2 className=" text-new-color font-bold text-4xl ">New</h2>
+
+          {windowWidth > 1500 ? (<div className="flex flex-col">
+            <div className=" px-10 pt-8 p-2 xl:pb-8 bg-container-color">
+                <h2 className=" text-new-color font-bold text-4xl xl:text-5xl">New</h2>
             </div>
             <div className=" bg-container-color text-letter-color grid grid-rows-3 gap-y-14 px-8 pt-8">
-              <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+              <div className=" flex flex-col border-b-2 border-gray-600 p-2 xl:pb-8">
                 <h2 className=" text-gray-200 font-bold text-3xl">Hydrogen VS Electric Cars</h2>
                 <p className=" text-gray-400 text-xl mt-2">Will hydrogen-fueled cars ever catch up to EVs?</p>
               </div>
-              <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
+              <div className=" flex flex-col border-b-2 border-gray-600 p-2 xl:pb-8">
                 <h2 className=" text-gray-200 font-bold text-3xl">The Downsides of AI Artistry</h2>
                 <p className=" text-gray-400 text-xl mt-2">What are the possible adverse effects of on-demand AI image generation?</p>
               </div>
@@ -71,9 +85,11 @@ export default function Home() {
                 <p className=" text-gray-400 text-xl mt-2">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
               </div>
             </div>
-          </div>
+          </div>) : ""}
+
         </div>
-        <div>
+
+        { windowWidth < 1000 ?(<div>
           <h1 className="font-bold text-5xl mt-8">The Bright Future of Web 3.0?</h1>
           <p className="text-gray-700 text-lg mt-8 leading-8">
             We dive into the next evolution of the web that claims to
@@ -81,30 +97,30 @@ export default function Home() {
             But is it really fulfillings its promise?
           </p>
           <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
-        </div>
+        </div>) : ""}
 
-        <section className="mt-20 ">
+        {windowWidth < 1500 ? (<section className="mt-20 md:pr-12">
           <div className=" px-8 pt-8 pb-2 bg-container-color">
-              <h2 className=" text-new-color font-bold text-4xl ">New</h2>
+              <h2 className=" text-new-color font-bold text-4xl lg:text-5xl">New</h2>
           </div>
           <div className=" bg-container-color text-letter-color grid grid-rows-3 gap-y-8 px-8 pt-8">
             <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
-              <h2 className=" text-gray-200 font-bold text-2xl">Hydrogen VS Electric Cars</h2>
-              <p className=" text-gray-400 text-lg mt-2">Will hydrogen-fueled cars ever catch up to EVs?</p>
+              <h2 className=" text-gray-200 font-bold text-2xl lg:text-3xl">Hydrogen VS Electric Cars</h2>
+              <p className=" text-gray-400 text-lg mt-2 lg:text-xl">Will hydrogen-fueled cars ever catch up to EVs?</p>
             </div>
             <div className=" flex flex-col border-b-2 border-gray-600 pb-10">
-              <h2 className=" text-gray-200 font-bold text-2xl">The Downsides of AI Artistry</h2>
-              <p className=" text-gray-400 text-lg mt-2">What are the possible adverse effects of on-demand AI image generation?</p>
+              <h2 className=" text-gray-200 font-bold text-2xl lg:text-3xl">The Downsides of AI Artistry</h2>
+              <p className=" text-gray-400 text-lg mt-2 lg:text-xl">What are the possible adverse effects of on-demand AI image generation?</p>
             </div>
             <div className=" flex flex-col">
-              <h2 className=" text-gray-200 font-bold text-2xl">Is VC Funding Drying Up?</h2>
-              <p className=" text-gray-400 text-lg mt-2">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+              <h2 className=" text-gray-200 font-bold text-2xl lg:text-3xl">Is VC Funding Drying Up?</h2>
+              <p className=" text-gray-400 text-lg mt-2 lg:text-xl">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
             </div>
           </div>
-        </section>
+        </section>) : ""}
 
-        <section className="mt-20">
-        <div className="grid grid-cols-1 gap-y-10">
+        <section className="mt-20 lg:mt-24">
+        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-3">
           <div className="grid grid-cols-3 gap-4">
             <div className="col-span-1 aspect-w-7 aspect-h-4 ">
               <Image
@@ -144,7 +160,7 @@ export default function Home() {
               />
             </div>
             <div className="col-span-2 px-4 flex flex-col justify-between">
-              <h2 className="text-4xl font-extrabold text-gray-500">04</h2>
+              <h2 className="text-4xl font-extrabold text-gray-500">03</h2>
               <h3 className="text-xl font-extrabold">The Growth of Gaming</h3>
               <p className="text-lg text-gray-500">How the pandemic has sparked fresh opportunities.</p>
             </div>
