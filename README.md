@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# News Project - Frontend Mentor
+Given a defined layout by Frontend Mentor, I had to code it and use any technologies needed.
 
-## Getting Started
+## Table of Contents
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-First, run the development server:
+## Overview
+### Screenshot
+### Desktop 1/2
+![news1](https://github.com/Gabrieluser430/news-website/assets/107634249/e8999ddc-1501-40ab-ab17-7e23db1ff4bd)
+### Desktop 2/2
+![news2](https://github.com/Gabrieluser430/news-website/assets/107634249/9ec2b03e-924a-4b81-aa1b-290d8c8b4b59)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Mobile 1/2
+![news3](https://github.com/Gabrieluser430/news-website/assets/107634249/a6cb8c8e-b7ff-43fd-9452-039cb55d82a0)
+### Mobile 2/3
+![news5](https://github.com/Gabrieluser430/news-website/assets/107634249/d979cedb-e874-4569-a7f0-a05e4e73bc0b)
+### Mobile 3/3
+![news4](https://github.com/Gabrieluser430/news-website/assets/107634249/f5a98df5-5675-4bb9-a0ac-623cbbd62265)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Links
+- Live Site URL: [Live site](https://news-website-smoky.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My process
+A project with a beautiful design that was achieved by using TailwindCSS along with the mobile-first approach.
+### Built with
+- Typescript
+- Next.js
+- TailwindCSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+- Twitter: [@gabrieluser431](https://twitter.com/gabrieluser431)
