@@ -12,6 +12,7 @@ import {useEffect, useState} from "react"
 
 export default function Home() {
   useEffect(() => {
+    setWindowWidth(window.innerWidth)
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
     }
