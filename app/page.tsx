@@ -19,7 +19,7 @@ export default function Home() {
 
     return () => window.removeEventListener('resize', handleResize)
   }, [])
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   return (
     <div>
