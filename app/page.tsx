@@ -24,20 +24,20 @@ export default function Home() {
   return (
     <div>
       <nav className="flex flex-row justify-between items-center h-28 px-6 lg:px-44 lg:py-20">
-        <div className="pl-2">
+        <div className="pl-2 cursor-pointer">
           <Image src={logo} alt="Logo" width={`${windowWidth > 1000 ? 70 : 50}`} height={50}/>
         </div>
         {windowWidth < 1300 ? (
-          <div className="pr-2 md:pr-12">
+          <div className="pr-2 cursor-pointer md:pr-12">
           <Image src={menu} alt="Menu" width={`${windowWidth > 1000 ? 70 : 50}`} height={50} />
           </div>
         ) : (
           <div className=" flex flex-row justify-between text-gray-500 font-medium lg:text-2xl lg">
-            <a className="mr-8">Home</a>
-            <a className="mr-8">New</a>
-            <a className="mr-8">Popular</a>
-            <a className="mr-8">Trending</a>
-            <a className="mr-8">Categories</a>
+            <a className="mr-8 cursor-pointer">Home</a>
+            <a className="mr-8 cursor-pointer">New</a>
+            <a className="mr-8 cursor-pointer">Popular</a>
+            <a className="mr-8 cursor-pointer">Trending</a>
+            <a className="mr-8 cursor-pointer">Categories</a>
           </div>
         )
       }
@@ -62,7 +62,7 @@ export default function Home() {
                   put the power of the platforms back into the hands of the people.
                   But is it really fulfillings its promise?
                 </p>
-                <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
+                <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8 rounded-lg hover:bg-red-700" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
               </div>
             </div>) : ""}
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
             put the power of the platforms back into the hands of the people.
             But is it really fulfillings its promise?
           </p>
-          <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
+          <button className=" bg-button-color text-white px-10 py-4 font-semibold mt-8 rounded-lg hover:bg-red-700" style={{letterSpacing: '0.4rem'}}>READ MORE</button>
         </div>) : ""}
 
         {windowWidth < 1500 ? (<section className="mt-20 md:pr-12">
@@ -120,55 +120,61 @@ export default function Home() {
         </section>) : ""}
 
         <section className="mt-20 lg:mt-24">
-        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-3">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+        <div className="flex flex-col justify-center items-center lg:flex-row">
+
+          <div className="flex flex-col items-center justify-center shadow-lg py-12 px-4 rounded-lg mt-4 lg:mr-12">
+            <div className=" ">
               <Image
                 src={mobileRetro}
                 alt="A old computer"
-                className="object-contain"
+                className="object-contain rounded-lg"
               />
             </div>
-            <div className="col-span-2 px-4 flex flex-col justify-between">
+            <div className="max-w-[300px] mt-6 px-4">
               <h2 className="text-4xl font-extrabold text-gray-500">01</h2>
               <h3 className="text-xl font-extrabold">Reviving Retro PCs</h3>
               <p className="text-lg text-gray-500">What happens when old PCs are given modern upgrades?</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+          <div className="flex flex-col items-center justify-center shadow-lg py-12 px-4 rounded-lg mt-4 lg:mr-12">
+            <div className=" ">
               <Image
                 src={mobileLaptop}
                 alt="A old computer"
-                className="object-contain"
+                className="object-contain rounded-lg"
               />
             </div>
-            <div className="col-span-2 px-4 flex flex-col justify-between">
+            <div className="max-w-[300px] mt-6 px-4">
               <h2 className="text-4xl font-extrabold text-gray-500">02</h2>
               <h3 className="text-xl font-extrabold">Top 10 Laptops of 2022</h3>
               <p className="text-lg text-gray-500">Our best picks for various needs and budgets.</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-1 aspect-w-7 aspect-h-4 ">
+          <div className="flex flex-col items-center justify-center shadow-lg py-12 px-4 rounded-lg mt-4">
+            <div className=" ">
               <Image
                 src={mobileGaming}
                 alt="A old computer"
-                className="object-contain"
+                className="object-contain rounded-lg"
               />
             </div>
-            <div className="col-span-2 px-4 flex flex-col justify-between">
+            <div className="max-w-[300px] mt-6 px-4">
               <h2 className="text-4xl font-extrabold text-gray-500">03</h2>
               <h3 className="text-xl font-extrabold">The Growth of Gaming</h3>
               <p className="text-lg text-gray-500">How the pandemic has sparked fresh opportunities.</p>
             </div>
           </div>
-        </div>
+          </div>
 
         </section>
       </main>
+      <footer className='flex flex-row justify-center items-center pt-32 pb-12'>
+          <p className='text-black font-semibold text-center'>
+            ©2023 Gabriel B. - Todos os direitos reservados.
+          </p>
+      </footer>
     </div>
   )
 }
